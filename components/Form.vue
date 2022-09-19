@@ -2,7 +2,7 @@
   <div class="d-flex flex-column align-items-center gap-5 p-3">
     <h1>Multi Step Form</h1>
     <form>
-      <fieldset id="1">
+      <fieldset id="1" v-if="steps.step === 1">
         <h2>Job Creation - Hosts</h2>
         <label for="source">
           Select source
@@ -52,7 +52,7 @@
         <button class="continueForm btn btn-dark">Continue</button>
       </fieldset>
 
-      <fieldset id="2">
+      <fieldset id="2" v-if="steps.step === 2">
         <h2>Job Creation - VM</h2>
         <label for="vm">
           Select targets
@@ -75,7 +75,7 @@
         <button class="continueForm btn btn-dark">Continue</button>
       </fieldset>
 
-      <fieldset id="3">
+      <fieldset id="3" v-if="steps.step === 3">
         <h2>Job Creation - Times</h2>
         <div>
           <label for="interval">
@@ -121,7 +121,7 @@
         </fieldset>
       </fieldset>
 
-      <fieldset id="4">
+      <fieldset id="4" v-if="steps.step === 4">
         <h2>Job Creation - Summary</h2>
         <p>Here is the summary</p>
         <button class="continueForm btn btn-dark">Create</button>
@@ -140,6 +140,9 @@ const days = [
   'Saturday',
   'Sundays',
 ]
+const steps = {
+  step: 1,
+}
 </script>
 
 <style>
