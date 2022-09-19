@@ -88,9 +88,9 @@
             />
             Interval</label
           >
-          <label for="timeslots">
-            <input type="radio" id="timeslots" name="times" value="timeslots" />
-            Timeslots</label
+          <label for="timeSlots">
+            <input type="radio" id="timeSlots" name="times" value="timeSlots" />
+            TimeSlots</label
           >
         </div>
         <fieldset class="interval bg-light">
@@ -119,12 +119,12 @@
 
           <button class="continueForm btn btn-dark">Continue</button>
         </fieldset>
-
-        <fieldset class="timeslots"></fieldset>
       </fieldset>
 
       <fieldset id="4">
-        <h2>Fieldset 4</h2>
+        <h2>Job Creation - Summary</h2>
+        {{/* Chart or plain text */}}
+        <button class="continueForm btn btn-dark">Create</button>
       </fieldset>
     </form>
   </div>
