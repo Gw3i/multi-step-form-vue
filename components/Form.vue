@@ -49,11 +49,28 @@
           </label>
         </fieldset>
         <button type="button" class="btn btn-secondary">+</button>
-        <button>Continue</button>
+        <button class="continueForm btn btn-dark">Continue</button>
       </fieldset>
 
       <fieldset id="2">
-        <h2>Fieldset 2</h2>
+        <h2>Job Creation - VM</h2>
+        <label for="vm">
+            Select targets
+            <select name="vm" id="vm">
+              <option>dedivmts_vm</option>
+              <option>dedivmts_vm2</option>
+              <option>dedivmts_vm3</option>
+              <option>dedivmts_vm4</option>
+              <option>dedivmts_vm5</option>
+            </select>
+          </label>
+          <label for="drPostfix">DR Postfix
+            <input id="drPostfix" name="drPostfix" type="checkbox">
+          </label>
+          <label for="cloneUUID">Clone UUID
+            <input id="cloneUUID" name="cloneUUID" type="checkbox">
+          </label>
+          <button class="continueForm btn btn-dark">Continue</button>
       </fieldset>
 
       <fieldset id="3">
