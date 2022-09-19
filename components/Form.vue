@@ -1,6 +1,7 @@
 <template>
   <div class="d-flex flex-column align-items-center gap-5 p-3">
-    <h1>Multi Step Form</h1>
+    <h1 v-if="steps.step === 1">Multi Step Form</h1>
+    <h1 v-if="steps.step === 2">This works</h1>
     <form>
       <fieldset id="1" v-if="steps.step === 1">
         <h2>Job Creation - Hosts</h2>
@@ -49,7 +50,9 @@
           </label>
         </fieldset>
         <button type="button" class="btn btn-secondary">+</button>
-        <button class="continueForm btn btn-dark">Continue</button>
+        <button @click.prevent="nextStep" class="continueForm btn btn-dark">
+          Continue
+        </button>
       </fieldset>
 
       <fieldset id="2" v-if="steps.step === 2">
@@ -72,7 +75,9 @@
           >Clone UUID
           <input id="cloneUUID" name="cloneUUID" type="checkbox" />
         </label>
-        <button class="continueForm btn btn-dark">Continue</button>
+        <button @click.prevent="nextStep" class="continueForm btn btn-dark">
+          Continue
+        </button>
       </fieldset>
 
       <fieldset id="3" v-if="steps.step === 3">
@@ -117,7 +122,9 @@
             </label>
           </fieldset>
 
-          <button class="continueForm btn btn-dark">Continue</button>
+          <button @click.prevent="nextStep" class="continueForm btn btn-dark">
+            Continue
+          </button>
         </fieldset>
       </fieldset>
 
@@ -142,6 +149,11 @@ const days = [
 ]
 const steps = {
   step: 1,
+}
+
+function nextStep() {
+  steps.step++
+  console.log(steps.step)
 }
 </script>
 
