@@ -1,9 +1,10 @@
 <template>
   <div class="d-flex flex-column align-items-center gap-5 p-3">
-    <h1 v-if="steps.step === 1">Multi Step Form</h1>
-    <h1 v-if="steps.step === 2">This works</h1>
+    <h1>Multi Step Form</h1>
+    <h1>This works</h1>
+    <h1>{{ step }}</h1>
     <form>
-      <fieldset id="1" v-if="steps.step === 1">
+      <fieldset id="1" v-if="step === 1">
         <h2>Job Creation - Hosts</h2>
         <label for="source">
           Select source
@@ -50,12 +51,12 @@
           </label>
         </fieldset>
         <button type="button" class="btn btn-secondary">+</button>
-        <button @click.prevent="nextStep" class="continueForm btn btn-dark">
+        <button @click.prevent="step++" class="continueForm btn btn-dark">
           Continue
         </button>
       </fieldset>
 
-      <fieldset id="2" v-if="steps.step === 2">
+      <fieldset id="2" v-if="step === 2">
         <h2>Job Creation - VM</h2>
         <label for="vm">
           Select targets
@@ -75,12 +76,12 @@
           >Clone UUID
           <input id="cloneUUID" name="cloneUUID" type="checkbox" />
         </label>
-        <button @click.prevent="nextStep" class="continueForm btn btn-dark">
+        <button @click.prevent="step++" class="continueForm btn btn-dark">
           Continue
         </button>
       </fieldset>
 
-      <fieldset id="3" v-if="steps.step === 3">
+      <fieldset id="3" v-if="step === 3">
         <h2>Job Creation - Times</h2>
         <div>
           <label for="interval">
@@ -122,13 +123,13 @@
             </label>
           </fieldset>
 
-          <button @click.prevent="nextStep" class="continueForm btn btn-dark">
+          <button @click.prevent="step++" class="continueForm btn btn-dark">
             Continue
           </button>
         </fieldset>
       </fieldset>
 
-      <fieldset id="4" v-if="steps.step === 4">
+      <fieldset id="4" v-if="step === 4">
         <h2>Job Creation - Summary</h2>
         <p>Here is the summary</p>
         <button class="continueForm btn btn-dark">Create</button>
@@ -138,6 +139,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 const days = [
   'Monday',
   'Tuesday',
@@ -147,14 +149,7 @@ const days = [
   'Saturday',
   'Sundays',
 ]
-const steps = {
-  step: 1,
-}
-
-function nextStep() {
-  steps.step++
-  console.log(steps.step)
-}
+const step = ref(1)
 </script>
 
 <style>
