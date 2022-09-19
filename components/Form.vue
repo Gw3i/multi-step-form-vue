@@ -123,7 +123,7 @@
 
       <fieldset id="4">
         <h2>Job Creation - Summary</h2>
-        {{/* Chart or plain text */}}
+        <p>Here is the summary</p>
         <button class="continueForm btn btn-dark">Create</button>
       </fieldset>
     </form>
