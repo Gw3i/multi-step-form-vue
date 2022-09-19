@@ -55,26 +55,72 @@
       <fieldset id="2">
         <h2>Job Creation - VM</h2>
         <label for="vm">
-            Select targets
-            <select name="vm" id="vm">
-              <option>dedivmts_vm</option>
-              <option>dedivmts_vm2</option>
-              <option>dedivmts_vm3</option>
-              <option>dedivmts_vm4</option>
-              <option>dedivmts_vm5</option>
-            </select>
-          </label>
-          <label for="drPostfix">DR Postfix
-            <input id="drPostfix" name="drPostfix" type="checkbox">
-          </label>
-          <label for="cloneUUID">Clone UUID
-            <input id="cloneUUID" name="cloneUUID" type="checkbox">
-          </label>
-          <button class="continueForm btn btn-dark">Continue</button>
+          Select targets
+          <select name="vm" id="vm">
+            <option>dedivmts_vm</option>
+            <option>dedivmts_vm2</option>
+            <option>dedivmts_vm3</option>
+            <option>dedivmts_vm4</option>
+            <option>dedivmts_vm5</option>
+          </select>
+        </label>
+        <label for="drPostfix"
+          >DR Postfix
+          <input id="drPostfix" name="drPostfix" type="checkbox" />
+        </label>
+        <label for="cloneUUID"
+          >Clone UUID
+          <input id="cloneUUID" name="cloneUUID" type="checkbox" />
+        </label>
+        <button class="continueForm btn btn-dark">Continue</button>
       </fieldset>
 
       <fieldset id="3">
-        <h2>Fieldset 3</h2>
+        <h2>Job Creation - Times</h2>
+        <div>
+          <label for="interval">
+            <input
+              type="radio"
+              id="interval"
+              name="times"
+              value="interval"
+              checked
+            />
+            Interval</label
+          >
+          <label for="timeslots">
+            <input type="radio" id="timeslots" name="times" value="timeslots" />
+            Timeslots</label
+          >
+        </div>
+        <fieldset class="interval bg-light">
+          <fieldset v-for="day in days">
+            <label for="timesDay"
+              >{{ day }}
+              <input id="timesDay" name="timesDay" type="checkbox" />
+              <label>
+                <select name="" id="">
+                  <option value="30min">30min</option>
+                  <option value="1h">1h</option>
+                  <option value="3h">3h</option>
+                  <option value="10h">10h</option>
+                  <option value="16h">16h</option>
+                </select>
+              </label>
+            </label>
+            <label for="breakRuleFrom">
+              <input id="breakRuleFrom" name="breakRuleFrom" type="time" />
+            </label>
+            <span>-</span>
+            <label for="breakRuleTo">
+              <input id="breakRuleTo" name="breakRuleTo" type="time" />
+            </label>
+          </fieldset>
+
+          <button class="continueForm btn btn-dark">Continue</button>
+        </fieldset>
+
+        <fieldset class="timeslots"></fieldset>
       </fieldset>
 
       <fieldset id="4">
@@ -85,9 +131,15 @@
 </template>
 
 <script setup>
-function hello() {
-  alert('Hello')
-}
+const days = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sundays',
+]
 </script>
 
 <style>
