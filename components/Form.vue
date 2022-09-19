@@ -3,7 +3,7 @@
     <h1>Multi Step Form</h1>
     <form>
       <fieldset id="1">
-        <h2>Fieldset 1</h2>
+        <h2>Job Creation - Hosts</h2>
         <label for="source">
           Select source
           <select name="source" id="source">
@@ -27,7 +27,7 @@
         <label for="sourceVolumesPath">
           <input id="sourceVolumesPath" name="sourceVolumesPath" type="text" />
         </label>
-        <fieldset>
+        <fieldset class="targets">
           <label for="targets">
             Select targets
             <select name="targets" id="targets">
@@ -48,13 +48,18 @@
             <input id="targetDirectory" name="targetDirectory" type="text" />
           </label>
         </fieldset>
+        <button type="button" class="btn btn-secondary">+</button>
+        <button>Continue</button>
       </fieldset>
+
       <fieldset id="2">
         <h2>Fieldset 2</h2>
       </fieldset>
+
       <fieldset id="3">
         <h2>Fieldset 3</h2>
       </fieldset>
+
       <fieldset id="4">
         <h2>Fieldset 4</h2>
       </fieldset>
@@ -67,3 +72,9 @@ function hello() {
   alert('Hello')
 }
 </script>
+
+<style>
+.targets {
+  background-color: lightgrey;
+}
+</style>
