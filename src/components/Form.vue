@@ -5,33 +5,48 @@
       <form class="modal-content rounded-4 shadow">
         <fieldset class="modal-body rounded-4 shadow p-5" v-if="step === 1">
           <h2>Job Creation - Hosts</h2>
-          <label for="source">
-            Select source
-            <select name="source" id="source">
-              <option>192.168.50.10</option>
-              <option>192.168.50.20</option>
-              <option>192.168.50.30</option>
-              <option>192.168.50.40</option>
-              <option>192.168.50.50</option>
-            </select>
-          </label>
-          <label for="snapshots">
-            <input id="snapshots" name="snapshots" type="number" />
-          </label>
-          <label for="sourceSnapshotPath">
-            <input
-              id="sourceSnapshotPath"
-              name="sourceSnapshotPath"
-              type="text"
-            />
-          </label>
-          <label for="sourceVolumesPath">
-            <input
-              id="sourceVolumesPath"
-              name="sourceVolumesPath"
-              type="text"
-            />
-          </label>
+
+          <div>
+            <label for="source">
+              Select source
+              <select name="source" id="source">
+                <option>192.168.50.10</option>
+                <option>192.168.50.20</option>
+                <option>192.168.50.30</option>
+                <option>192.168.50.40</option>
+                <option>192.168.50.50</option>
+              </select>
+            </label>
+            <label for="snapshots"
+              >Snapshots
+              <input
+                id="snapshots"
+                name="snapshots"
+                type="number"
+                class="w-10px"
+              />
+            </label>
+          </div>
+
+          <div class="d-flex mt-2 mb-2">
+            <label for="sourceSnapshotPath"
+              >Source Snapshot Path
+              <input
+                id="sourceSnapshotPath"
+                name="sourceSnapshotPath"
+                type="text"
+              />
+            </label>
+            <label for="sourceVolumesPath"
+              >Source Volumes Path
+              <input
+                id="sourceVolumesPath"
+                name="sourceVolumesPath"
+                type="text"
+              />
+            </label>
+          </div>
+
           <fieldset class="targets">
             <label for="targets">
               Select targets
@@ -43,7 +58,8 @@
                 <option>192.168.50.50</option>
               </select>
             </label>
-            <label for="targetSnapshots">
+            <label for="targetSnapshots"
+              >Snapshots
               <input
                 id="targetSnapshots"
                 name="targetSnapshots"
@@ -51,10 +67,17 @@
               />
             </label>
             <label for="priority">
+              Priority
               <input id="priority" name="priority" type="number" />
             </label>
             <label for="targetDirectory">
-              <input id="targetDirectory" name="targetDirectory" type="text" />
+              Target Directory
+              <input
+                id="targetDirectory"
+                name="targetDirectory"
+                type="text"
+                placeholder="/mnt/vm/dcw"
+              />
             </label>
           </fieldset>
           <button type="button" class="btn btn-secondary">+</button>
