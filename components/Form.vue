@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-column align-items-center gap-5 p-3">
     <h1>Multi Step Form</h1>
-    <div class="modal-dialog mw-100">
+    <div class="w-50">
       <form class="modal-content rounded-4 shadow">
         <fieldset class="modal-body rounded-4 shadow p-5" v-if="step === 1">
           <h2>Job Creation - Hosts</h2>
